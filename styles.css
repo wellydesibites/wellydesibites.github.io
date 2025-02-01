@@ -27,16 +27,20 @@ body {
 
 /* Top Banner */
 .top-banner {
-    background-color: white;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
     position: fixed;
+    width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    height: 100px;
+    height: auto;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .banner-content {
