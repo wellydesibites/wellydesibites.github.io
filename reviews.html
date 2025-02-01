@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - WellyDesiBites</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="WellyDesiBites Logo">
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/wellydesibites" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/wellydesibites" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="reviews-page">
+        <div class="container">
+            <h1>What Our Customers Say</h1>
+            <div class="reviews-filter">
+                <button class="active" data-filter="all">All Reviews</button>
+                <button data-filter="google">Google Reviews</button>
+                <button data-filter="facebook">Facebook Reviews</button>
+            </div>
+            <div class="reviews-grid">
+                <!-- Google Reviews -->
+                <div class="review-card" data-source="google">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer">Shilpa Sharma</div>
+                            <div class="platform"><i class="fab fa-google"></i> Google Review</div>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    <div class="content">"Ordered a cake for my son's birthday. The design was beautiful and the taste was amazing. Everyone loved it. Highly recommended."</div>
+                    <div class="review-date">December 2023</div>
+                </div>
+                <!-- Add more review cards here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Details</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 52B Truscott Avenue, Johnsonville 6037</p>
+                <p><i class="fas fa-phone"></i> 0210 832 6153</p>
+                <p><i class="fas fa-envelope"></i> Egglesscakes@wellydesibites.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/wellydesibites" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/wellydesibites" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 WellyDesiBites. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
