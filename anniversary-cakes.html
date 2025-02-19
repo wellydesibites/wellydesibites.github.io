@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WellyDesiBites - Eggless Hub</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    
+
+    <section class="category-page">
+        <a href="index.html#gallery" class="back-button">< Back to Our Creations</a>
+        <div class="section-container">
+            <h2>Anniversary Cakes</h2>
+            <div class="image-grid" id="anniversaryCakeGrid">
+                <!-- Add all Anniversary cake images -->
+                <!-- Add more images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="prev" onclick="previousImage()">Previous</button>
+            <button class="next" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let imageFiles = [
+            "anniversaryCake-1.jpg",
+            "20241005_084951.jpg",
+            "20241015_234134.jpg",
+            "20240601_143521.jpg",
+            "20240601_143552.jpg",
+            "20240601_143612.jpg",
+            "20231202_171120.jpg",
+            "20231202_171316.jpg",
+            "20231202_171344.jpg",
+            "20240812_165147.jpg",
+            "20240812_165045.jpg",
+            "20231103_235049.jpg",
+            "20231103_234906.jpg",
+            "20241109_114430.jpg",
+            "20241109_114504.jpg",
+            "20241005_184353.jpg",
+            "20241005_184400.jpg",
+            "20241012_154234.jpg",
+            "20250216_135148.jpg",
+            "20250216_135156.jpg",
+            
+         
+        ]; // filenames from list_files result
+        let currentImageIndex = 0;
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('modalImage').src = 'images/AnniversaryCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/AnniversaryCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/AnniversaryCakes/' + imageFiles[currentImageIndex];
+        }
+
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+
+        // Dynamically load images
+        window.onload = function() {
+            const imageGrid = document.getElementById('anniversaryCakeGrid');
+
+            imageFiles.forEach((filename, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+                imageItem.onclick = function() { openModal(index); }; // Pass index to openModal
+
+                const img = document.createElement('img');
+                img.src = 'images/AnniversaryCakes/' + filename;
+                img.alt = 'Anniversary Cake Image'; // generic alt text
+
+                imageItem.appendChild(img);
+                imageGrid.appendChild(imageItem);
+            });
+        };
+    </script>
+</body>
+</html>

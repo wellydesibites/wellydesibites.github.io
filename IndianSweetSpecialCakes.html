@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WellyDesiBites - Eggless Hub</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    
+    
+    
+    
+
+    <section class="category-page">
+        <a href="index.html#gallery" class="back-button">< Back to Our Creations</a>
+        <div class="section-container">
+            <h2>Indian Sweet Special Cakes</h2>
+            <div class="image-grid" id="indianSweetSpecialCakeGrid">
+                <!-- Add all indian sweet special cake images -->
+                <!-- Add more images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="prev" onclick="previousImage()">Previous</button>
+            <button class="next" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let imageFiles = [
+            "20240618_113830.jpg",
+            "20240618_113853.jpg",
+            "20240618_113927.jpg",
+            "20240622_165242.jpg",
+            "20240622_165353.jpg",
+            "20240805_114443.jpg",
+            "20240805_114450.jpg",
+            "20240810_111437.jpg",
+            "20240810_111511.jpg",
+            "20240830_131410.jpg",
+            "20240913_132528.jpg",
+            "20240913_132556.jpg",
+            "20241015_141349.jpg",
+            "20241018_123340.jpg",
+            "20241018_123353.jpg",
+            "20241120_122812.jpg",
+            "happyBirthday-1.jpg",
+            "20241103_103411.jpg",
+            "20241103_103351.jpg",
+            "20230826_103340.jpg",
+            "20230826_103401.jpg",
+            "20230818_130301.jpg",
+            "20230818_130313.jpg",
+            "20230916_112137.jpg",
+            "20230528_105801.jpg",
+            "20230802_003822.jpg",
+            "20231107_195156.jpg",
+            "20240316_141056.jpg",
+            "20240423_114905.jpg",
+            "20240423_114932.jpg",
+            "20231107_195202.jpg",
+            "20231107_195156.jpg",
+            "20231107_195217.jpg",
+            "20230919_002536.jpg",
+            "20240909_133826.jpg", 
+            "20240510_164928.jpg",
+            "20240510_164818.jpg",
+            "20240504_002536.jpg",
+            "20240316_140956.jpg",
+            "20231207_001641.jpg",
+            "20231207_001922.jpg",
+            "20231120_144052.jpg",
+            "20240513_225757.jpg",
+            "20240513_225745.jpg"
+
+            
+        
+            
+            
+
+
+        ]; // filenames from list_files result
+        let currentImageIndex = 0;
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('modalImage').src = 'images/IndianSweetSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/IndianSweetSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/IndianSweetSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+
+        // Dynamically load images
+        window.onload = function() {
+            const imageGrid = document.getElementById('indianSweetSpecialCakeGrid');
+
+            imageFiles.forEach((filename, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+                imageItem.onclick = function() { openModal(index); }; // Pass index to openModal
+
+                const img = document.createElement('img');
+                img.src = 'images/IndianSweetSpecialCakes/' + filename;
+                img.alt = 'Indian Sweet Special Cake Image'; // generic alt text
+
+                imageItem.appendChild(img);
+                imageGrid.appendChild(imageItem);
+            });
+        };
+    </script>
+</body>
+</html>
