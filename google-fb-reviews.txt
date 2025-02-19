@@ -1,0 +1,107 @@
+
+-------- google reviews-----------
+
+<div class="about-text">
+                    <p>At WellyDesiBites, we specialize in creating delicious eggless cakes, cupcakes, pastries, and desserts that bring joy to every occasion. Our passion for baking combined with traditional flavors makes each creation unique and memorable.</p>
+                    <p>We take pride in crafting eggless delights that not only taste amazing but also look stunning, perfect for any celebration.</p>
+</div>
+
+                                <p>“Shruti makes very yummy cakes. I had ordered Rabdi cake for my baby shower and the cake was highlight of the event, everyone liked it😍 so moist and sweetness was just perfect.
+									 Highly recommend.”</p>
+	                            <span>- padmaja jainkop</span>
+	                             <p>“I order a rasmali 🎂 cake from welly desi bites. Super happy with my order.. cake was really 👍 good designed i loved it as well in taste was wonderful.My family likes it as well..
+	                             	 and also i got ready my cake in less time that’s was also great service🤞🤞soo go visit and order you cake with welly desi bites👍.”</p>
+	                            <span>- Sukhman Dhillon</span>
+	                             <p>“We ordered Pineapple cake for my son’s 2 nd birthday. Shruti got it ready for us in a very short period of time. Trust me, no compromise on taste. It was delicious 😋 also
+	                                 the cake presentation was great with a small Giraffe themed stuff on it. We loved it:)”</p>
+	                            <span>- Shilpa Warang</span>
+	                             <p>“I ordered chocolate flavour cake for my son’s b’day. The cake made by Shruti was a stunning masterpiece that tasted as good as it looked. She made the cake exactly as per our preferences 
+	                                and the final outcome was way better than expected. Highly recommended🙌”</p>
+	                            <span>- Sonia Garg</span>
+	                             <p>“Ordered my son’s 5th Birthday cake and we were truly amazed to see the beautiful animal themed cake presented to us. It was super yummy, very fluffy and neatly crafted. All our guests just
+	                             	 praised the same at every bite. Thanks heaps and keep up the great work!”</p>
+	                            <span>- Sonakshi Sharma</span>
+	                             <p>“Tried Tres Leches cake Rose Flavoured from welly desi bites.
+									It was mouth watering and bursting with flavours. Very light Cake soaked in sweet Rose flavoured milk and topped with fresh whipped cream. The flavour is so balanced with adequate sweetness.
+									It's different and perfect desi touch for Diwali party or any other party if you fancy some indian desi flavour order this and you will not be regret.”</p>
+	                            <span>- RG Puri</span>
+	
+	
+	
+-------- facebook reviews-----------
+
+
+
+
+gallery section 
+
+  <!-- Update Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <h3 class="section-title">Our Creations</h3>
+            
+            <!-- Birthday Cakes -->
+            <div class="gallery-subsection">
+                <h4>Custom Birthday Cakes</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/BirthdayCakes/happyBirthday-1.jpg" alt="Birthday Cake 1">
+                    </div>
+                     <div class="gallery-item">
+                        <img src="images/BirthdayCakes/happyBirthday-2.jpg" alt="Birthday Cake 2">
+                    </div>
+                    <!-- Add 3 more items -->
+                </div>
+            </div>
+    
+            <!-- Anniversary Cakes -->
+            <div class="gallery-subsection">
+                <h4>Elegant Anniversary Cakes</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/AnniversaryCakes/anniversaryCake-1.jpg" alt="Anniversary Cake 1">
+                    </div>
+                     <div class="gallery-item">
+                        <img src="images/AnniversaryCakes/anniversaryCake-2.jpg" alt="Anniversary Cake 2">
+                    </div>
+                    <!-- Add 3 more items -->
+                </div>
+            </div>
+    
+            <!-- Cupcakes -->
+            <div class="gallery-subsection">
+                <h4>Assorted Cupcakes</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/Cupcakes/cupcakes-1.jpg" alt="Cupcake 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Cupcakes/cupcakes-2.jpg" alt="Cupcake 2">
+                    </div>
+                    <!-- Add 3 more items -->
+                </div>
+            </div>
+    
+            <!-- Festive Specials -->
+            <div class="gallery-subsection">
+                <h4>Festive Special Cakes</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/FestiveSpecial/FestivalSpecial-1.jpg" alt="Festive Cake 1">
+                    </div>
+                    <!-- Add 3 more items -->
+                </div>
+            </div>
+    
+            <!-- Pastries -->
+            <div class="gallery-subsection">
+                <h4>Delicious Pastries</h4>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/Pastries/pastry-1.jpg" alt="Pastry 1">
+                    </div>
+                    <!-- Add 3 more items -->
+                </div>
+            </div>
+        </div>
+    </section>

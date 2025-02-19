@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WellyDesiBites - Eggless Hub</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    
+
+    <section class="category-page">
+        <a href="index.html#gallery" class="back-button">< Back to Our Creations</a>
+        <div class="section-container">
+            <h2>Custom Birthday Cakes</h2>
+            <div class="image-grid" id="birthdayCakeGrid">
+                <!-- Add all birthday cake images -->
+                <!-- Add more images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="prev" onclick="previousImage()">Previous</button>
+            <button class="next" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let imageFiles = [
+            "20241122_194639.jpg",
+            "20241122_194652.jpg",
+            "20241122_194732.jpg",
+            "IMG-20240815-WA0011.jpg",
+            "IMG-20240815-WA0012.jpg",
+            "P1143326.jpg",
+            "P1143329.jpg",
+            "20240825_150512.jpg",
+            "20240825_150504.jpg",
+            "20240825_150633.jpg",
+            "20241005_181114.jpg",
+            "20240810_202616.jpg",
+            "20240810_202700.jpg",
+            "20240602_225913.jpg",
+            "20240602_225929.jpg",
+            "20240602_225913.jpg",
+            "20240608_081507.jpg",
+            "20240608_081511.jpg",    
+            "20240818_025311.jpg",
+            "20240818_025306.jpg",
+            "20240818_025327.jpg",
+            "20241019_170027.jpg",
+            "20241019_170039.jpg",
+            "20241020_125527.jpg",
+            "20241020_125601.jpg",
+            "20241020_140650.jpg",
+            "20241020_140700.jpg",
+            "20241024_102123.jpg",
+            "20241025_125229.jpg",
+            "20241025_125241.jpg",
+            "20241025_155230.jpg",
+            "20241025_155236.jpg",
+            "20241026_122843.jpg",
+            "20241026_122956.jpg",
+            "20241028_144330.jpg",
+            "20241028_144408.jpg",
+            "20241028_173219.jpg",
+            "20240330_103500.jpg",
+            "20240330_103514.jpg",
+            "20240403_134212.jpg",
+            "20240405_141342.jpg",
+            "20240405_141533.jpg",
+            "20240420_203320.jpg",
+            "20240527_194726.jpg",
+            "20241028_173222.jpg",
+            "20241028_173234.jpg",
+            "20241030_131156.jpg",
+            "20241101_114950.jpg",
+            "20241102_130030.jpg",
+            "20241103_103351.jpg",
+            "20241004_142110.jpg",
+            "20241004_142134.jpg",
+            "20241103_103411.jpg",
+            "20240531_094546.jpg",
+            "20240703_130317.jpg",
+            "20240707_115805.jpg",
+            "20240707_115826.jpg",
+            "20240703_130251.jpg",
+            "20240531_094600.jpg",
+            "20241106_185901.jpg",
+            "20241109_095643.jpg",
+            "20241110_085426.jpg",
+            "20241110_085439.jpg",
+            "20241110_094157.jpg",
+            "20241110_094201.jpg",
+            "20241110_094209.jpg",
+            "20241110_103134.jpg",
+            "20241110_103427.jpg",
+            "20241110_105644.jpg",
+            "20240810_202758.jpg",
+            "20241110_105659.jpg",
+            "20241111_101914.jpg",
+            "20241111_101920.jpg",
+            "20241111_112840.jpg",
+            "20241111_112843.jpg",
+            "20241112_010644.jpg",
+            "20241112_142859.jpg",
+            "20241112_143730.jpg",
+            "20241114_190655.jpg",
+            "20241114_190700.jpg",
+            "20241115_134639.jpg",
+            "20241115_134652.jpg",
+            "20241120_115826.jpg",
+            "20241120_122812.jpg",
+            "20241123_134031.jpg",
+            "20241123_134045.jpg",
+            "20241123_205047.jpg",
+            "20241123_220230.jpg",
+            "20241124_143047.jpg",
+            "20241124_143121.jpg",
+            "20241127_120758.jpg",
+            "20241127_120832.jpg",
+            "20241127_134337(0).jpg",
+            "20241127_134421.jpg",
+            "20241129_173235.jpg",
+            "20241129_173249.jpg",
+            "20241130_180726.jpg",
+            "20241130_191105.jpg",
+            "happyBirthday-1.jpg",
+            "happyBirthday-2.jpg",
+            "IMG-20241019-WA0021.jpg",
+            "IMG-20241111-WA0005.jpg",
+            "20240914_073057.jpg",
+            "20231002_134856.jpg",
+            "20231008_181439.jpg",
+            "20230923_015513.jpg",
+            "20230818_195230.jpg",
+            "20230805_215233.jpg",
+            "20230729_112701.jpg",
+            "20231103_131352.jpg",
+            "20240318_172219.jpg",
+            "20240714_105821.jpg",
+            "20240714_110510.jpg",
+            "20240317_033724.jpg",
+            "20231216_111425.jpg",
+            "20240511_135530.jpg",
+            "20240511_135419.jpg",
+            "IMG-20240501-WA0129.jpg",
+            "IMG-20250219-WA0002.jpg",
+            "IMG-20250219-WA0001.jpg",
+            "20231206_124917.jpg",
+            "IMG-20250219-WA0005.jpg",
+            "20240909_132750.jpg",
+            "20240909_132728.jpg",
+            "20240804_222608.jpg",
+            "20240801_011914.jpg",
+            "20240525_181056.jpg",
+            "20240525_181049.jpg",
+            "20240427_144103.jpg",
+            "20240427_144102.jpg",
+            "20240420_003940.jpg",
+            "20231130_212304.jpg",
+            "20231130_212253.jpg",
+            "20231130_233850.jpg",
+            "20231130_233002.jpg",
+            "20231119_123132.jpg",
+            "20231116_204243.jpg",
+            "20240420_002229.jpg",
+            "20240608_205714.jpg",
+            "20240608_205619.jpg",
+            "20240601_094513.jpg",
+            "20240524_175632.jpg",
+            "20240516_003835.jpg",
+            "20241129_173307.jpg",
+            
+
+  
+
+            
+
+        ]; // filenames from list_files result
+        let currentImageIndex = 0;
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('modalImage').src = 'images/BirthdayCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/BirthdayCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/BirthdayCakes/' + imageFiles[currentImageIndex];
+        }
+
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+
+        // Dynamically load images
+        window.onload = function() {
+            const imageGrid = document.getElementById('birthdayCakeGrid');
+
+            imageFiles.forEach((filename, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+                imageItem.onclick = function() { openModal(index); }; // Pass index to openModal
+
+                const img = document.createElement('img');
+                img.src = 'images/BirthdayCakes/' + filename;
+                img.alt = 'Birthday Cake Image'; // generic alt text
+
+                imageItem.appendChild(img);
+                imageGrid.appendChild(imageItem);
+            });
+        };
+    </script>
+</body>
+</html>
