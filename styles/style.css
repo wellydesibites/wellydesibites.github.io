@@ -145,10 +145,6 @@ body {
         display: none;
     }
 
-    .nav-links {
-        display: flex; /* Ensure nav links are visible */
-    }
-    
     .menu-grid {
         grid-template-columns: 1fr;
     }
@@ -156,6 +152,7 @@ body {
     .hero-tagline {
         font-size: 2rem; /* Adjust font size for better fit */
         margin-bottom: 1rem; /* Adjust spacing */
+        line-height: 1.2; /* Adjust line height for better fit */
     }
 }
 
