@@ -26,7 +26,7 @@
     <!-- The Modal -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+        <img loading="lazy" class="modal-content" id="modalImage">
         <div class="modal-nav">
             <button class="prev" onclick="previousImage()">Previous</button>
             <button class="next" onclick="nextImage()">Next</button>
@@ -101,6 +101,7 @@
                 const img = document.createElement('img');
                 img.src = 'images/AnniversaryCakes/' + filename;
                 img.alt = 'Anniversary Cake Image'; // generic alt text
+                img.loading = 'lazy';
 
                 imageItem.appendChild(img);
                 imageGrid.appendChild(imageItem);
