@@ -23,9 +23,9 @@
          </div>
          <ul class="nav-links">
              <li><a href="#home">Home</a></li>
-             <li><a href="#gallery">Gallery</a></li>
              <li><a href="#about">About</a></li>
              <li><a href="#menu">Menu</a></li>
+             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact Us</a></li>
             <li class="phone-number">
                  <i class="fas fa-phone-alt"></i>
@@ -75,21 +75,6 @@
     </section>
 
 
-	 <!-- New Menu Section -->
-	 <section id="menu" class="menu-section">
-	     <div class="section-container">
-	         <h3 class="section-title">Our Menu</h3>
-	         <div class="menu-grid">
-	             <div class="menu-item">
-	                 <img loading="lazy" src="images/Menu/menu-1.jpg" alt="Menu Page 1">
-	             </div>
-	             <div class="menu-item">
-	                 <img loading="lazy" src="images/Menu/menu-3.jpg" alt="Menu Page 2">
-	             </div>
-	         </div>
-	     </div>
-	 </section>
-
     <!-- Quick Intro Section -->
     <section class="quick-intro">
         <div class="section-container">
@@ -120,85 +105,6 @@
         </div>
     </section>
 
-      <!-- Updated Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="section-container">
-            <h3 class="section-title">Our Creations</h3>
-            
-            <div class="category-links">
-                <a href="birthday-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/BirthdayCakes/20241122_194732.jpg" alt="Birthday Cakes">
-                    <h4>Custom Birthday Cakes</h4>
-                </a>
-                
-                <a href="anniversary-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/AnniversaryCakes/20241015_234134.jpg" alt="Anniversary Cakes">
-                    <h4>Elegant Anniversary Cakes</h4>
-                </a>
-                
-                <a href="FreshFruitsCakes.html" class="category-card">
-                    <img loading="lazy" src="images/FreshFruitsCakes/20240614_203413.jpg" alt="Fresh Fruits Cakes">
-                    <h4>Fresh Fruits Cakes</h4>
-                </a>
-
-                <a href="IndianSweetSpecialCakes.html" class="category-card">
-                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20240618_113830.jpg" alt="Indian Sweet Special Cakes">
-                    <h4>Indian Sweet Special Cakes</h4>
-                </a>
-
-                <a href="BabyShower-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/BabyShowerCakes/babyShower-1.jpg" alt="Baby Shower Cakes">
-                    <h4>Baby Shower Cakes</h4>
-                </a>
-                
-                <a href="FestiveSpecial-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/FestiveSpecial/FestivalSpecial-1.jpg" alt="Festival Special Cakes">
-                    <h4>Festival Special Cakes</h4>
-                </a>            
-    
-                <a href="NumberCakes.html" class="category-card">
-                    <img loading="lazy" src="images/NumberCakes/20240925_114326.jpg" alt="Number Cakes">
-                    <h4>Number Cakes</h4>
-                </a>
-
-                <a href="ImageBasedCakes.html" class="category-card">
-                    <img loading="lazy" src="images/ImageBasedCakes/20240524_132346.jpg" alt="Image Based Cakes">
-                    <h4>Image Based Cakes</h4>
-                </a>
-
-                <a href="Cupcakes.html" class="category-card">
-                    <img loading="lazy" src="images/Cupcakes/cupcakes-1.jpg" alt="Cup Cakes">
-                    <h4>Cup Cakes</h4>
-                </a>
-
-                <a href="Pastries.html" class="category-card">
-                    <img loading="lazy" src="images/Pastries/pastry-1.jpg" alt="Pastires">
-                    <h4>Pastires</h4>
-                </a>
-
-                
-                <!-- Add similar blocks for other categories -->
-            </div>
-        </div>
-    </section>
-        
-	    <!-- Add this to smooth scroll script -->
-	<script>
-	    // Smooth scroll with offset for fixed header
-	    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-	        anchor.addEventListener('click', function (e) {
-	            e.preventDefault();
-	            const target = document.querySelector(this.getAttribute('href'));
-	            const headerHeight = document.querySelector('.main-nav').offsetHeight;
-	            const targetPosition = target.offsetTop - headerHeight;
-	
-	            window.scrollTo({
-	                top: targetPosition,
-	                behavior: 'smooth'
-	            });
-	        });
-	    });
-	</script>
 
 	<!-- Update About Section -->
 	<section id="about" class="about-section">
@@ -361,6 +267,103 @@
 	        </div>
 	    </div>
 	</section>
+
+	 <!-- New Menu Section -->
+	 <section id="menu" class="menu-section">
+	     <div class="section-container">
+	         <h3 class="section-title">Our Menu</h3>
+	         <div class="menu-grid">
+	             <div class="menu-item">
+	                 <img loading="lazy" src="images/Menu/menu-1.jpg" alt="Menu Page 1">
+	             </div>
+	             <div class="menu-item">
+	                 <img loading="lazy" src="images/Menu/menu-3.jpg" alt="Menu Page 2">
+	             </div>
+	         </div>
+	     </div>
+	 </section>
+
+
+      <!-- Updated Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <h3 class="section-title">Our Creations</h3>
+            
+            <div class="category-links">
+                <a href="birthday-cakes.html" class="category-card">
+                    <img loading="lazy" src="images/BirthdayCakes/20241122_194732.jpg" alt="Birthday Cakes">
+                    <h4>Custom Birthday Cakes</h4>
+                </a>
+                
+                <a href="anniversary-cakes.html" class="category-card">
+                    <img loading="lazy" src="images/AnniversaryCakes/20241015_234134.jpg" alt="Anniversary Cakes">
+                    <h4>Elegant Anniversary Cakes</h4>
+                </a>
+                
+                <a href="FreshFruitsCakes.html" class="category-card">
+                    <img loading="lazy" src="images/FreshFruitsCakes/20240614_203413.jpg" alt="Fresh Fruits Cakes">
+                    <h4>Fresh Fruits Cakes</h4>
+                </a>
+
+                <a href="IndianSweetSpecialCakes.html" class="category-card">
+                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20240618_113830.jpg" alt="Indian Sweet Special Cakes">
+                    <h4>Indian Sweet Special Cakes</h4>
+                </a>
+
+                <a href="BabyShower-cakes.html" class="category-card">
+                    <img loading="lazy" src="images/BabyShowerCakes/babyShower-1.jpg" alt="Baby Shower Cakes">
+                    <h4>Baby Shower Cakes</h4>
+                </a>
+                
+                <a href="FestiveSpecial-cakes.html" class="category-card">
+                    <img loading="lazy" src="images/FestiveSpecial/FestivalSpecial-1.jpg" alt="Festival Special Cakes">
+                    <h4>Festival Special Cakes</h4>
+                </a>            
+    
+                <a href="NumberCakes.html" class="category-card">
+                    <img loading="lazy" src="images/NumberCakes/20240925_114326.jpg" alt="Number Cakes">
+                    <h4>Number Cakes</h4>
+                </a>
+
+                <a href="ImageBasedCakes.html" class="category-card">
+                    <img loading="lazy" src="images/ImageBasedCakes/20240524_132346.jpg" alt="Image Based Cakes">
+                    <h4>Image Based Cakes</h4>
+                </a>
+
+                <a href="Cupcakes.html" class="category-card">
+                    <img loading="lazy" src="images/Cupcakes/cupcakes-1.jpg" alt="Cup Cakes">
+                    <h4>Cup Cakes</h4>
+                </a>
+
+                <a href="Pastries.html" class="category-card">
+                    <img loading="lazy" src="images/Pastries/pastry-1.jpg" alt="Pastires">
+                    <h4>Pastires</h4>
+                </a>
+
+                
+                <!-- Add similar blocks for other categories -->
+            </div>
+        </div>
+    </section>
+        
+	    <!-- Add this to smooth scroll script -->
+	<script>
+	    // Smooth scroll with offset for fixed header
+	    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	        anchor.addEventListener('click', function (e) {
+	            e.preventDefault();
+	            const target = document.querySelector(this.getAttribute('href'));
+	            const headerHeight = document.querySelector('.main-nav').offsetHeight;
+	            const targetPosition = target.offsetTop - headerHeight;
+	
+	            window.scrollTo({
+	                top: targetPosition,
+	                behavior: 'smooth'
+	            });
+	        });
+	    });
+	</script>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
