@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WellyDesiBites - Eggless Hub</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    
+
+    <section class="category-page">
+        <a href="index.html#gallery" class="back-button">< Back to Our Creations</a>
+        <div class="section-container">
+            <h2>Alphabet Cakes</h2>
+            <div class="image-grid" id="alphabetCakeGrid">
+                <!-- Add all number cake images -->
+                <!-- Add more images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img loading="lazy" class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="prev" onclick="previousImage()">Previous</button>
+            <button class="next" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let imageFiles = [
+            "20250308_183725.jpg",
+            "20250308_183854.jpg",
+            "20250308_183905.jpg",
+            "20250308_183913.jpg",
+            
+        ]; // filenames from list_files result
+        let currentImageIndex = 0;
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('modalImage').src = 'imagesAlphabetCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/AlphabetCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/AlphabetCakes/' + imageFiles[currentImageIndex];
+        }
+
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+
+        // Dynamically load images
+        window.onload = function() {
+            const imageGrid = document.getElementById('alphabetCakeGrid');
+
+            imageFiles.forEach((filename, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+                imageItem.onclick = function() { openModal(index); }; // Pass index to openModal
+
+                const img = document.createElement('img');
+                img.src = 'images/AlphabetCakes/' + filename;
+                img.alt = 'Alphabet Cake Image'; // generic alt text
+                img.loading = 'lazy';
+
+                imageItem.appendChild(img);
+                imageGrid.appendChild(imageItem);
+            });
+        };
+    </script>
+</body>
+</html>
