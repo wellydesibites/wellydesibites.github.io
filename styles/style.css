@@ -391,10 +391,11 @@ body {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
+    text-align: center;
+}
+
+.about-paragraph {
+    text-align: center;
 }
 
 .testimonials {
