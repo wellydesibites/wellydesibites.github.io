@@ -746,6 +746,8 @@ body {
     }
 
     .category-card img {
+        max-height: 150px;
+        object-fit: contain;
     }
 
     .contact-section .social-links a {
