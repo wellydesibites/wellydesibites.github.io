@@ -168,7 +168,7 @@ body {
 @media (max-width: 768px) {
     .nav-links .phone-number,
     .nav-links .social-icons {
-        display: none;
+        display: flex;
     }
 
     .menu-grid {
@@ -704,8 +704,8 @@ body {
     }
 
     .nav-links {
-        position: fixed;
-        left: -100%;
+        position: relative;
+        left: 0;
         top: 70px;
         flex-direction: column;
         background: var(--light);
