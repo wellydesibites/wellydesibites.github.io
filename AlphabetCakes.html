@@ -49,7 +49,7 @@
         function openModal(index) {
             currentImageIndex = index;
             document.getElementById('imageModal').style.display = "block";
-            document.getElementById('modalImage').src = 'imagesAlphabetCakes/' + imageFiles[currentImageIndex];
+            document.getElementById('modalImage').src = 'images/AlphabetCakes/' + imageFiles[currentImageIndex];
         }
 
         function closeModal() {
@@ -85,7 +85,7 @@
 
                 const img = document.createElement('img');
                 img.src = 'images/AlphabetCakes/' + filename;
-                img.alt = 'Alphabet Cake Image'; // generic alt text
+                img.alt = `Eggless Alphabet Cake ${index + 1} - Wellington`; // descriptive alt text
                 img.loading = 'lazy';
 
                 imageItem.appendChild(img);
