@@ -5,12 +5,13 @@
         <script async src=https://www.googletagmanager.com/gtag/js?id=G-DN25PJC0Y1></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DN25PJC0Y1'); </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WellyDesiBites - Eggless Hub</title>
+        <title>Eggless Number Cakes Wellington | WellyDesiBites</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     </head>
 <body>
+    <meta name="description" content="Order delicious eggless Number Theme design cakes in Wellington, NZ. WellyDesiBites offers a unique fusion of traditional Indian flavors and modern cake designs.">
 
     
 
@@ -34,6 +35,42 @@
             <button class="next" onclick="nextImage()">Next</button>
         </div>
     </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h5>Contact Details</h5>
+                <p>WellyDesiBites</p>
+                <p>Johnsonville, Wellington - 6037</p>
+                <p>New Zealand</p>
+                <p>Phone: 02108326153</p>
+            </div>
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/wellydesibites" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/wellydesibitesnz" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 WellyDesiBites. All rights reserved</p>
+        </div>
+    </footer>
 
     <script>
         let imageFiles = [
@@ -86,7 +123,7 @@
 
                 const img = document.createElement('img');
                 img.src = 'images/NumberCakes/' + filename;
-                img.alt = 'Number Cake Image'; // generic alt text
+                img.alt = `Eggless Number Cake ${index + 1} - Wellington`; // descriptive alt text
                 img.loading = 'lazy';
 
                 imageItem.appendChild(img);
