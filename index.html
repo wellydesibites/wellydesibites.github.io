@@ -127,15 +127,91 @@
 	    </div>
 	</section>
 
-	 <!-- New Menu Section -->
-	 <section id="menu" class="menu-section">
-	     <div class="section-container">
-	         <h3 class="section-title">Our Menu</h3>
-			 <div class="menu-item" style="text-align: center;">
-                <img loading="lazy" src="images/Menu/menu-1.jpg" alt="WellyDesiBites Menu">
+<section id="menu" class="menu-section">
+    <div class="section-container">
+        <h3 class="section-title">Our Menu</h3>
+        <div class="menu">
+            <div class="menu-category">
+                <h4>Cakes</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h5>Birthday Cake</h5>
+                            <p>Delicious birthday cake with custom designs.</p>
+                            <span class="price">$50</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Anniversary Cake</h5>
+                            <p>Elegant anniversary cake for your special day.</p>
+                            <span class="price">$60</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Wedding Cake</h5>
+                            <p>Stunning wedding cake to celebrate your love.</p>
+                            <span class="price">$100</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-	     </div>
-	 </section>
+            <div class="menu-category">
+                <h4>Cupcakes</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h5>Chocolate Cupcake</h5>
+                            <p>Rich chocolate cupcake with creamy frosting.</p>
+                            <span class="price">$5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Vanilla Cupcake</h5>
+                            <p>Classic vanilla cupcake with buttercream frosting.</p>
+                            <span class="price">$5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Red Velvet Cupcake</h5>
+                            <p>Moist red velvet cupcake with cream cheese frosting.</p>
+                            <span class="price">$6</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-category">
+                <h4>Pastries</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <h5>Chocolate Pastry</h5>
+                            <p>Flaky pastry filled with rich chocolate cream.</p>
+                            <span class="price">$7</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Vanilla Pastry</h5>
+                            <p>Delicate pastry filled with smooth vanilla cream.</p>
+                            <span class="price">$7</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <h5>Strawberry Pastry</h5>
+                            <p>Sweet pastry filled with fresh strawberry cream.</p>
+                            <span class="price">$8</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
       <!-- Updated Gallery Section -->
     <section id="gallery" class="gallery-section">
@@ -314,6 +390,8 @@
                         <a href="https://www.google.com/search?q=wellydesibites+review&sca_esv=64d520b7f1cacb69&source=hp&ei=SKmeZ9OKHezgseMPx7T6GA&iflsig=ACkRmUkAAAAAZ563WMO949coyVujtO9ZZnk9qe5JmLxn&oq=wellydesibites+rev&gs_lp=Egdnd3Mtd2l6IhJ3ZWxseWRlc2liaXRlcyByZXYqAggAMgUQIRigATIFECEYoAEyBRAhGKABSP86UK0HWNYrcAJ4AJABAJgB5AGgAeIdqgEGMC4xMi43uAEDyAEA-AEBmAIVoAKmHqgCCsICChAAGAMY6gIYjwHCAgoQLhgDGOoCGI8BwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICCBAAGIAEGLEDwgIREC4YgAQYsQMY0QMYgwEYxwHCAgsQLhiABBjHARivAcICDhAuGIAEGLEDGNEDGMcBwgIFEC4YgATCAhAQABiABBixAxiDARhGGIACwgIOEAAYgAQYsQMYgwEYigXCAg4QLhiABBixAxjHARivAcICCBAuGIAEGLEDwgIFEAAYgATCAg0QLhiABBjHARgKGK8BwgIHEC4YgAQYCsICBxAAGIAEGArCAgQQABgewgICECbCAgUQABjvBcICCBAAGIAEGKIEmAMF8QUV1oXm0NWPMZIHBjIuNy4xMqAHw4YB&sclient=gws-wiz#lrd=0x6d38ad761cf319d9:0x4f213f56802107c2,1,,,," target="_blank">See All Reviews</a>
                         <button class="next-review" onclick="nextReview('googleReviews')">❯</button>
                     </div>
+                    <div class="carousel-indicators" id="googleReviewsIndicators">
+                    </div>
                 </div>
 
                 <div class="review-section" itemscope itemtype="http://schema.org/Review">
@@ -365,6 +443,8 @@
                         <button class="prev-review" onclick="previousReview('facebookReviews')">❮</button>
                         <a href="https://www.facebook.com/wellydesibites/reviews" target="_blank">See All Reviews</a>
                         <button class="next-review" onclick="nextReview('facebookReviews')">❯</button>
+                    </div>
+                    <div class="carousel-indicators" id="facebookReviewsIndicators">
                     </div>
                 </div>
             </div>

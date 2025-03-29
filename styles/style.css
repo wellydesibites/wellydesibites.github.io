@@ -29,7 +29,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.95); /* Add a semi-transparent background */
     backdrop-filter: blur(5px); /* Add a blur effect */
 }
 
@@ -268,7 +268,7 @@ body {
     text-align: center;
     color: var(--light);
     padding: 2rem;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.6);
     border-radius: 15px;
 }
 
@@ -674,7 +674,7 @@ body {
     .close {
         top: 15px;
         right: 20px;
-        font-size: 35px;
+        font-size: 30px;
     }
 }
 
@@ -741,6 +741,20 @@ body {
     .phone-number,
     .social-icons {
         display: none; /* Hide phone number and social icons */
+    }
+
+    .nav-links .phone-number,
+    .nav-links .social-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links .phone-number {
+        margin-left: auto;
+    }
+
+    .nav-links .social-icons {
+        margin-left: 1rem;
     }
 
     .hero {
