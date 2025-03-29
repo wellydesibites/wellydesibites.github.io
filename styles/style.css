@@ -8,6 +8,12 @@
     --font-body: 'Poppins', sans-serif;
 }
 
+@media (max-width: 768px) {
+    .nav-links li a {
+        font-size: 0.8em;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
