@@ -40,11 +40,11 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -276,6 +276,7 @@ body {
     padding: 2rem;
     background: rgba(0,0,0,0.6);
     border-radius: 15px;
+    margin-top: 5rem;
 }
 
 .hero-tagline {
