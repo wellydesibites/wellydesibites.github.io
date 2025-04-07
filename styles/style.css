@@ -304,6 +304,11 @@ body {
     transition: transform 0.3s;
 }
 
+/* Increase contrast for accessibility */
+.cta-btn {
+    filter: brightness(1.2);
+}
+
 .cta-btn:hover {
     transform: translateY(-3px);
 }
