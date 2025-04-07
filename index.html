@@ -2,14 +2,147 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-      <script async src=https://www.googletagmanager.com/gtag/js?id=G-DN25PJC0Y1></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DN25PJC0Y1'); </script>
+      <script>
+        function loadGtag(){
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-DN25PJC0Y1';
+          document.head.appendChild(gtagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DN25PJC0Y1');
+        }
+        window.addEventListener('load', loadGtag);
+      </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WellyDesiBites - Delicious Eggless Cakes in Wellington, NZ | Custom Cakes & More</title>
     <meta name="description" content="WellyDesiBites: Wellington's premier bakery for delicious eggless cakes, cupcakes, and pastries.  Custom designs for birthdays, weddings, and all occasions. Vegan & gluten-free options available. Order online today!">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #ffd93d;
+            --accent: #4ECDC4;
+            --dark: #2D3436;
+            --light: #ffffff;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95); /* Add a semi-transparent background */
+            backdrop-filter: blur(5px); /* Add a blur effect */
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--light);
+            padding: 2rem;
+            background: rgba(0,0,0,0.7);
+            border-radius: 15px;
+            margin-top: 7rem;
+        }
+
+        .hero-tagline {
+            font-family: var(--font-title);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a i {
+            font-size: 2em; /* Adjust the size as needed */
+        }
+    </style>
+    <link rel="preload" href="styles/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles/style.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap"></noscript>
     <style>
         .social-links a i {
             font-size: 2em; /* Adjust the size as needed */
@@ -265,7 +398,7 @@
     <div class="section-container">
         <h3 class="section-title">Flavours</h3>
         <div class="flavours-image">
-            <img src="images/Menu/menu-1.jpg" alt="Flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;">
+            <img src="images/Menu/menu-1.jpg" alt="Flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;" width="800" height="450">
         </div>
     </div>
 </section>
@@ -278,57 +411,57 @@
             
             <div class="category-links">
                 <a href="birthday-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/BirthdayCakes/20241122_194732.jpg" alt="Custom Eggless Birthday Cakes Wellington">
+                    <img loading="lazy" src="images/BirthdayCakes/20241122_194732.jpg" alt="Custom Eggless Birthday Cakes Wellington" width="250" height="167">
                     <h4>Custom Birthday Cakes</h4>
                 </a>
                 
                 <a href="anniversary-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/AnniversaryCakes/20241015_234134.jpg" alt="Elegant Eggless Anniversary Cakes Wellington">
+                    <img loading="lazy" src="images/AnniversaryCakes/20241015_234134.jpg" alt="Elegant Eggless Anniversary Cakes Wellington" width="250" height="167">
                     <h4>Elegant Anniversary Cakes</h4>
                 </a>
                 
                 <a href="FreshFruitsCakes.html" class="category-card">
-                    <img loading="lazy" src="images/FreshFruitsCakes/20240614_203413.jpg" alt="Fresh Fruits Eggless Cakes Wellington">
+                    <img loading="lazy" src="images/FreshFruitsCakes/20240614_203413.jpg" alt="Fresh Fruits Eggless Cakes Wellington" width="250" height="167">
                     <h4>Fresh Fruits Cakes</h4>
                 </a>
 
                 <a href="IndianSweetSpecialCakes.html" class="category-card">
-                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20240618_113830.jpg" alt="Indian Sweet Special Eggless Cakes Wellington">
+                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20240618_113830.jpg" alt="Indian Sweet Special Eggless Cakes Wellington" width="250" height="167">
                     <h4>Indian Sweet Special Cakes</h4>
                 </a>
 
                 <a href="BabyShower-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/BabyShowerCakes/babyShower-1.jpg" alt="Eggless Baby Shower Cakes Wellington">
+                    <img loading="lazy" src="images/BabyShowerCakes/babyShower-1.jpg" alt="Eggless Baby Shower Cakes Wellington" width="250" height="167">
                     <h4>Baby Shower Cakes</h4>
                 </a>
                 
                 <a href="FestiveSpecial-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/FestiveSpecial/FestivalSpecial-1.jpg" alt="Festival Special Eggless Cakes Wellington">
+                    <img loading="lazy" src="images/FestiveSpecial/FestivalSpecial-1.jpg" alt="Festival Special Eggless Cakes Wellington" width="250" height="167">
                     <h4>Festival Special Cakes</h4>
                 </a>            
     
                 <a href="NumberCakes.html" class="category-card">
-                    <img loading="lazy" src="images/NumberCakes/20240925_114326.jpg" alt="Eggless Number Cakes Wellington">
+                    <img loading="lazy" src="images/NumberCakes/20240925_114326.jpg" alt="Eggless Number Cakes Wellington" width="250" height="167">
                     <h4>Number Cakes</h4>
                 </a>
 
                 <a href="AlphabetCakes.html" class="category-card">
-                    <img loading="lazy" src="images/AlphabetCakes/20250308_183725.jpg" alt="Eggless Alphabet Cakes Wellington">
+                    <img loading="lazy" src="images/AlphabetCakes/20250308_183725.jpg" alt="Eggless Alphabet Cakes Wellington" width="250" height="167">
                     <h4>Alphabet Cakes</h4>
                 </a>
 
                 <a href="ImageBasedCakes.html" class="category-card">
-                    <img loading="lazy" src="images/ImageBasedCakes/20240524_132346.jpg" alt="Image Based Eggless Cakes Wellington">
+                    <img loading="lazy" src="images/ImageBasedCakes/20240524_132346.jpg" alt="Image Based Eggless Cakes Wellington" width="250" height="167">
                     <h4>Image Based Cakes</h4>
                 </a>
 
                 <a href="Cupcakes.html" class="category-card">
-                    <img loading="lazy" src="images/Cupcakes/cupcakes-1.jpg" alt="Eggless Cupcakes Wellington">
+                    <img loading="lazy" src="images/Cupcakes/cupcakes-1.jpg" alt="Eggless Cupcakes Wellington" width="250" height="167">
                     <h4>Cup Cakes</h4>
                 </a>
 
                 <a href="Pastries.html" class="category-card">
-                    <img loading="lazy" src="images/Pastries/pastry-1.jpg" alt="Eggless Pastries Wellington">
+                    <img loading="lazy" src="images/Pastries/pastry-1.jpg" alt="Eggless Pastries Wellington" width="250" height="167">
                     <h4>Pastires</h4>
                 </a>
 
