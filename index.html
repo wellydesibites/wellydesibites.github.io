@@ -256,8 +256,36 @@
     <!-- Quick Intro Section -->
     <section class="quick-intro">
         <div class="section-container">
-            <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
-            <p class="intro-text">Specializing in custom eggless cakes for birthdays, weddings, festivals, and any special occasion.</p>
+	<style>
+        .mobile-social-icons {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .mobile-social-icons {
+                display: flex;
+		justify-content: center;
+		margin-bottom: 1rem;
+            }
+	    .mobile-social-icons a {
+		color: var(--dark);
+		font-size: 1.5rem;
+		transition: transform 0.3s;
+	    }
+        }
+    </style>
+    <div class="mobile-social-icons">
+         <a href="https://wa.me/642108326153?text=I'm%20interested%20in%20your%20cakes" target="_blank">
+             <i class="fab fa-whatsapp"></i>
+         </a>&nbsp;&nbsp;&nbsp;
+         <a href="https://www.facebook.com/wellydesibites" target="_blank">
+             <i class="fab fa-facebook-f"></i>
+         </a>&nbsp;&nbsp;&nbsp;                 
+         <a href="https://www.instagram.com/wellydesibitesnz" target="_blank">
+             <i class="fab fa-instagram"></i>
+         </a>
+    </div>
+    <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
+    <p class="intro-text">Specializing in custom eggless cakes for birthdays, weddings, festivals, and any special occasion.</p>
             <div class="highlights">
                 <div class="highlight-item">
                     <i class="fas fa-egg-slash"></i>
