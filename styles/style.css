@@ -8,6 +8,18 @@
     --font-body: 'Poppins', sans-serif;
 }
 
+/* Hide hero video and CTA container on mobile */
+@media (max-width: 768px) {
+    .hero-video {
+        display: none !important;
+    }
+
+    .cta-container {
+        display: none !important;
+    }
+
+}
+
 @media (max-width: 768px) {
     .nav-links li a {
         font-size: 0.8em;
@@ -304,14 +316,19 @@ body {
     transition: transform 0.3s;
 }
 
+/* Increase contrast for accessibility */
+.cta-btn {
+    filter: brightness(1.2);
+}
+
 .cta-btn:hover {
     transform: translateY(-3px);
 }
 
 .social-container {
-    display: flex;
+    display: flex !important;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .social-icon {
@@ -326,7 +343,7 @@ body {
 
 /* Quick Intro Section */
 .quick-intro {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem !important;
     background: var(--light);
 }
 
@@ -408,7 +425,7 @@ body {
 
 /* About Section */
 .about-section {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem !important;
 }
 
 .about-content {
@@ -481,8 +498,8 @@ body {
 
 /* Contact Section */
 .contact-section {
-    padding: 5rem 2rem;
-    background: #f8f9fa;
+    padding: 5rem 2rem !important;
+    background: #f8f9fa !important;
 }
 
 .contact-container {
@@ -528,7 +545,7 @@ body {
 .main-footer {
     background: var(--dark);
     color: var(--light);
-    padding: 4rem 2rem 2rem;
+    padding: 5rem 2rem !important;
 }
 
 .footer-container {
