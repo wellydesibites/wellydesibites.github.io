@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.wellydesibites.com/</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Blog -->
+    <url>
+        <loc>https://www.wellydesibites.com/blog.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Cake Category Pages -->
+    <url>
+        <loc>https://www.wellydesibites.com/birthday-cakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/anniversary-cakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/BabyShower-cakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/FreshFruitsCakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/IndianSweetSpecialCakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/FestiveSpecial-cakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/ImageBasedCakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/AlphabetCakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/NumberCakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/Cupcakes.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://www.wellydesibites.com/Pastries.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Menu Page -->
+    <url>
+        <loc>https://www.wellydesibites.com/menu.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
+
