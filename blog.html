@@ -926,6 +926,76 @@
              });
          });
      </script>
+    <!-- WhatsApp Chat Widget -->
+    <div id="wdb-whatsapp-chat-bubble" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
+      <button id="wdb-open-chat" aria-label="Chat on WhatsApp" style="background: #25d366; border: none; border-radius: 50%; width: 60px; height: 60px; box-shadow: 0 4px 16px rgba(0,0,0,0.18); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <i class="fab fa-whatsapp" style="color: #fff; font-size: 2rem;"></i>
+      </button>
+    </div>
+    <div id="wdb-whatsapp-popup" style="display: none; position: fixed; bottom: 100px; right: 30px; width: 340px; max-width: 95vw; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 10000; overflow: hidden;">
+      <div style="background: #25d366; color: #fff; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-weight: bold; font-size: 1.1rem; font-family: 'Poppins', sans-serif; letter-spacing: 1px;">Chat with WellyDesiBites</span>
+        <button id="wdb-close-chat" aria-label="Close chat" style="background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer;">&times;</button>
+      </div>
+      <div style="padding: 18px 20px 12px 20px; background: #f8f9fa; min-height: 60px; font-size: 1.05rem; color: #2c3e50; font-family: 'Poppins', sans-serif; text-align: center; line-height: 1.5;">
+        Welcome to WellyDesiBites — your one-stop destination for delicious eggless cakes, made with love in Wellington! 🎂💜
+      </div>
+      <form id="wdb-chat-form" style="display: flex; border-top: 1px solid #eee; background: #fff;">
+        <input id="wdb-chat-input" type="text" placeholder="Type your message..." aria-label="Type your message" style="flex: 1; border: none; padding: 16px; font-size: 1rem; outline: none; background: #fff;">
+        <button type="submit" style="background: #25d366; border: none; color: #fff; font-size: 1.3rem; padding: 0 18px; cursor: pointer; border-radius: 0 0 18px 0;"> <i class="fas fa-paper-plane"></i> </button>
+      </form>
+    </div>
+    <style>
+      #wdb-whatsapp-chat-bubble {
+        animation: wdb-fadein 0.7s;
+      }
+      @keyframes wdb-fadein {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      #wdb-whatsapp-popup {
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        animation: wdb-popup-in 0.3s;
+      }
+      @keyframes wdb-popup-in {
+        from { opacity: 0; transform: scale(0.95) translateY(40px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      @media (max-width: 600px) {
+        #wdb-whatsapp-chat-bubble { right: 12px; bottom: 12px; }
+        #wdb-whatsapp-popup { right: 8px; bottom: 80px; width: 98vw; min-width: 0; }
+      }
+    </style>
+    <script>
+      // WhatsApp Chat Widget Logic
+      const wdbOpenChat = document.getElementById('wdb-open-chat');
+      const wdbPopup = document.getElementById('wdb-whatsapp-popup');
+      const wdbCloseChat = document.getElementById('wdb-close-chat');
+      const wdbChatForm = document.getElementById('wdb-chat-form');
+      const wdbChatInput = document.getElementById('wdb-chat-input');
+      const whatsappNumber = '642108326153'; // Your WhatsApp number
+      wdbOpenChat.addEventListener('click', () => {
+        wdbPopup.style.display = 'block';
+        wdbChatInput.focus();
+      });
+      wdbCloseChat.addEventListener('click', () => {
+        wdbPopup.style.display = 'none';
+      });
+      wdbChatForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const msg = encodeURIComponent(wdbChatInput.value.trim() || 'Hi! I am interested in your eggless cakes.');
+        window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, '_blank');
+        wdbPopup.style.display = 'none';
+        wdbChatInput.value = '';
+      });
+      // Optional: Close popup if user clicks outside
+      document.addEventListener('click', function(e) {
+        if (wdbPopup.style.display === 'block' && !wdbPopup.contains(e.target) && !wdbOpenChat.contains(e.target)) {
+          wdbPopup.style.display = 'none';
+        }
+      });
+    </script>
+<!-- End WhatsApp Chat Widget -->
 </body>
 </html>
 
