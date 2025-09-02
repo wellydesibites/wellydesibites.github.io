@@ -429,18 +429,16 @@ document.addEventListener('DOMContentLoaded', function() {
          </a>
     </div>
     <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
-    <p class="intro-text">Freshly baked eggless & vegan cakes, cupcakes, and pastries – handcrafted with love to make your celebrations truly unforgettable. 🎂💕
-       
-        We specialise in eggless cakes in Wellington that bring joy to every celebration – birthdays, weddings, anniversaries, or just a sweet surprise for your loved ones!
-
-            Our promise:
-            ✅ 100% Eggless & Premium Ingredients
-            ✅ Custom Themes & Creative Designs 🎨
-            ✅ Vegan & Fusion Options Available 🥥🌱
-            ✅ Freshly Baked for Every Order
-
-        Every bite is a blend of flavour, love, and happiness – because your celebrations deserve the very best.
-    </p>
+    <p class="intro-text">Looking for delicious <strong>eggless cakes in Wellington</strong>? At WellyDesiBites, we bake fresh eggless and vegan cakes, cupcakes, and pastries—crafted with care for birthdays, weddings, anniversaries, and every celebration.</p>
+    <p class="intro-text">We're a home bakery known for soft, flavourful bakes, custom themes, and friendly service. Tell us your idea—we'll design a cake that looks stunning and tastes even better.</p>
+    <ul class="intro-text" style="max-width: 800px; margin: 0 auto 2rem; list-style: none; padding-left: 0;">
+        <li>✅ 100% eggless with premium, fresh ingredients</li>
+        <li>✅ Custom designs and themed cakes for all occasions</li>
+        <li>✅ Vegan and fusion flavours available</li>
+        <li>✅ Gluten-free options available</li>
+        <li>✅ Freshly baked to order for the best taste</li>
+    </ul>
+    <p class="intro-text">Every bite blends <strong>flavour, love, and happiness</strong>—because your celebration deserves the very best. If you need a beautifully made, eggless cake in Wellington, you're in the right place.</p>
             <div class="highlights">
                 <div class="highlight-item">
                     <i class="fas fa-egg-slash"></i>
@@ -582,12 +580,46 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="flavours" class="flavours-section">
     <div class="section-container">
         <h3 class="section-title">Flavours</h3>
-        <div class="flavours-image">
-            <img src="images/Menu/menu-4.jpg" alt="Flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;" width="800" height="450" loading="lazy">
+        <div class="flavours-image" style="text-align:center;">
+            <img src="images/Menu/menu-4.jpg" alt="Wellington eggless cake flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto; max-width: 800px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer;" width="800" height="450" loading="lazy" onclick="openFlavourModal()">
         </div>
     </div>
-</section>
-
+    <!-- Modal for Flavours Image -->
+    <style>
+      /* Ensure flavours modal shows full image especially on mobile */
+      #flavourImageModal { z-index: 2000; }
+      #flavourImageModal .modal-content {
+        max-width: 95vw !important;
+        max-height: 95vh !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      @media (max-width: 768px) {
+        #flavourImageModal .modal-content { max-width: 98vw !important; max-height: 88vh !important; }
+        #flavourImageModal .close { top: 12px !important; right: 16px !important; font-size: 34px !important; }
+      }
+    </style>
+    <div id="flavourImageModal" class="modal">
+      <span class="close" onclick="closeFlavourModal()">&times;</span>
+      <img class="modal-content" id="flavourModalImg" alt="Wellington eggless cake flavours">
+    </div>
+    <script>
+      function openFlavourModal() {
+        document.getElementById('flavourImageModal').style.display = 'block';
+        document.getElementById('flavourModalImg').src = 'images/Menu/menu-4.jpg';
+      }
+      function closeFlavourModal() {
+        document.getElementById('flavourImageModal').style.display = 'none';
+      }
+      // Close modal when clicking outside image
+      window.addEventListener('click', function(event) {
+        var modal = document.getElementById('flavourImageModal');
+        if (event.target === modal) {
+          closeFlavourModal();
+        }
+      });
+    </script>
 
       <!-- Updated Gallery Section -->
     <section id="gallery" class="gallery-section">

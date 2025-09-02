@@ -82,4 +82,34 @@
             </div>
         </div>
     </div>
+    <!-- Menu Gallery Section -->
+    <div class="section-container">
+      <h3 class="section-title">Download Our Menu</h3>
+      <div class="image-grid" style="justify-items:center;">
+        <div class="image-item">
+          <img src="images/Menu/menu-4.jpg" alt="Wellington eggless cake flavours" style="max-width:400px;cursor:pointer;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);" onclick="openMenuModal()">
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Menu Image -->
+    <div id="menuImageModal" class="modal">
+      <span class="close" onclick="closeMenuModal()">&times;</span>
+      <img class="modal-content" id="menuModalImg" alt="Wellington eggless cake flavours">
+    </div>
+    <script>
+      function openMenuModal() {
+        document.getElementById('menuImageModal').style.display = 'block';
+        document.getElementById('menuModalImg').src = 'images/Menu/menu-4.jpg';
+      }
+      function closeMenuModal() {
+        document.getElementById('menuImageModal').style.display = 'none';
+      }
+      // Close modal when clicking outside image
+      window.addEventListener('click', function(event) {
+        var modal = document.getElementById('menuImageModal');
+        if (event.target === modal) {
+          closeMenuModal();
+        }
+      });
+    </script>
 </section>
