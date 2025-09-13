@@ -60,6 +60,16 @@ body {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center;
+    }
+    .logo {
+        align-items: center;
+        margin-right: 0;
+    }
+}
+
 .logo h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
