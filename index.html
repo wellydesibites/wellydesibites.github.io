@@ -41,6 +41,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+        
 
         /* Navigation */
         .main-nav {
@@ -58,7 +59,7 @@
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between; /* Changed from center to space-between */
+            justify-content: space-between; /* Default for desktop */
             align-items: center;
         }
 
@@ -66,7 +67,17 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-right: 2.5rem; /* Add space between logo and nav links */
+            margin-right: 2.5rem; /* Default for desktop */
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+            }
+            .logo {
+                align-items: center;
+                margin-right: 0;
+            }
         }
 
         .logo h1 {
@@ -358,6 +369,48 @@ document.addEventListener('DOMContentLoaded', function() {
             .main-nav .nav-container { padding: 0.4rem 0.8rem; }
             .main-nav .logo .logo-animation { height: 48px; }
             .main-nav .logo h1 { font-size: 1.2rem; }
+        }
+    </style>
+    <style>
+        /* ... existing styles ... */
+        .map-responsive {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          height: 0;
+          overflow: hidden;
+        }
+        .map-responsive iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+        @media (max-width: 900px) {
+          .map-section .section-container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+          .map-responsive {
+            width: 100vw !important;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            padding-bottom: 65vw; /* taller for mobile */
+            height: 0;
+            border-radius: 0;
+          }
+          .map-responsive iframe {
+            width: 100vw !important;
+            height: 100% !important;
+            min-height: 260px;
+            max-width: 100vw;
+            border-radius: 0;
+            display: block;
+          }
         }
     </style>
 </head>
@@ -752,27 +805,50 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <!-- Modal for Flavours Image -->
     <style>
-      /* Ensure flavours modal shows full image especially on mobile */
-      #flavourImageModal { z-index: 2000; }
+      /* Flavours modal styles */
+      #flavourImageModal {
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        /* Use flexbox for centering */
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
       #flavourImageModal .modal-content {
-        max-width: 95vw !important;
-        max-height: 95vh !important;
-        padding: 0 !important;
-        background: transparent !important;
-        box-shadow: none !important;
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+      #flavourImageModal .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 2001;
       }
       @media (max-width: 768px) {
-        #flavourImageModal .modal-content { max-width: 98vw !important; max-height: 88vh !important; }
-        #flavourImageModal .close { top: 12px !important; right: 16px !important; font-size: 34px !important; }
+        #flavourImageModal .close {
+          top: 15px;
+          right: 25px;
+          font-size: 35px;
+        }
       }
     </style>
-    <div id="flavourImageModal" class="modal">
+    <div id="flavourImageModal">
       <span class="close" onclick="closeFlavourModal()">&times;</span>
       <img class="modal-content" id="flavourModalImg" alt="Wellington eggless cake flavours">
     </div>
     <script>
       function openFlavourModal() {
-        document.getElementById('flavourImageModal').style.display = 'block';
+        document.getElementById('flavourImageModal').style.display = 'flex';
         document.getElementById('flavourModalImg').src = 'images/Menu/menu-4.jpg';
       }
       function closeFlavourModal() {
@@ -1176,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="section-container">
                 <h3 class="section-title">Our Location</h3>
                 <div class="map-responsive" style="text-align: center;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.731878798883!2d174.7518689769583!3d-41.20899997128583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38ad761cf319d9%3A0x1234567890abcdef!2s52B%2C%20Truscott%20Avenue%2C%20Johnsonville%2C%20Wellington%206037%2C%20New%20Zealand!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus" width="600" height="450" style="border:0; display: inline-block;"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.731878798883!2d174.7518689769583!3d-41.20899997128583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d38ad761cf319d9%3A0x1234567890abcdef!2s52B%2C%20Truscott%20Avenue%2C%20Johnsonville%2C%20Wellington%206037%2C%20New%20Zealand!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
