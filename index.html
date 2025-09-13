@@ -58,8 +58,15 @@
             margin: 0 auto;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between; /* Changed from center to space-between */
             align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 2.5rem; /* Add space between logo and nav links */
         }
 
         .logo h1 {
@@ -320,6 +327,39 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<style>
+  /* Ensure content is not hidden under fixed header (fallback) */
+  body { padding-top: 110px; }
+  @media (max-width: 768px) { body { padding-top: 120px; } }
+  /* Provide scroll margin for all sections when using hash links */
+  section { scroll-margin-top: 120px; }
+</style>
+<script>
+  // Dynamically set body padding to header height to prevent overlap
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.main-nav');
+    function applyHeaderOffset() {
+      if (!header) return;
+      document.body.style.paddingTop = header.offsetHeight + 'px';
+    }
+    applyHeaderOffset();
+    window.addEventListener('resize', applyHeaderOffset);
+  });
+</script>
+    <style>
+        /* Compact navigation header so it doesn't take too much space */
+        .main-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; }
+        .main-nav .nav-container { padding: 0.5rem 1rem; }
+        .main-nav { box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+        .main-nav .logo h2 { display: none; }
+        .main-nav .logo h1 { font-size: 1.6rem; }
+        .main-nav .logo .logo-animation { height: 64px; width: auto; }
+        @media (max-width: 900px) {
+            .main-nav .nav-container { padding: 0.4rem 0.8rem; }
+            .main-nav .logo .logo-animation { height: 48px; }
+            .main-nav .logo h1 { font-size: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -366,13 +406,16 @@ document.addEventListener('DOMContentLoaded', function() {
  </nav>
  
  <!-- Updated Hero Video -->
+ <!--
  <video autoplay muted loop class="hero-video" preload="auto" playsinline>
      <source src="videos/hero-page.mp4" type="video/mp4">
 	 <a href="#contact" class="cta-btn hero-cta">Order Now</a>
   </video>
+  -->
  
 
     <!-- Home Section -->
+    <!--
     <section id="home" class="hero">
         <div class="hero-content">
             <h2 class="hero-tagline">Homemade Eggless Cakes<br>Crafted with Love</h2>
@@ -394,10 +437,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </section>
+    -->
         
 
     <!-- Quick Intro Section -->
-    <section class="quick-intro">
+    <section id="home" class="quick-intro">
         <div class="section-container">
 	<style>
         .mobile-social-icons {
@@ -416,6 +460,77 @@ document.addEventListener('DOMContentLoaded', function() {
 		transition: transform 0.3s;
 	    }
         }
+        /* New split layout for intro + collage */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr; /* original balance */
+            gap: 2rem;
+            align-items: start;
+        }
+        .hero-text .section-title,
+        .hero-text .intro-text { text-align: left; }
+        .hero-text .section-title { margin-bottom: 1rem; }
+        .hero-text .intro-text { max-width: 720px; }
+        .hero-text ul.intro-text { margin-top: 0.5rem; }
+        .hero-collage .collage-wrapper {
+            position: relative;
+            width: 100%;
+            height: 460px; /* balanced height to reduce gap */
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            background: #f6f6f8;
+        }
+        .hero-collage img,
+        .hero-collage video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: opacity 400ms ease-in-out;
+            border-radius: 14px;
+            display: block;
+        }
+        .collage-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            border: none;
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid; place-items: center;
+        }
+        .collage-prev { left: 10px; }
+        .collage-next { right: 10px; }
+        .collage-dots {
+            position: absolute;
+            bottom: 10px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 6px;
+        }
+        .collage-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.6); }
+        .collage-dot.active { background: #fff; }
+        @media (max-width: 900px) {
+            .hero-split { grid-template-columns: 1fr; }
+            .hero-collage { margin-top: 1rem; }
+            .hero-collage .collage-wrapper { height: 360px; }
+            .hero-text .section-title,
+            .hero-text .intro-text { text-align: center; margin-left: auto; margin-right: auto; }
+            .hero-text ul.intro-text { margin-left: auto; margin-right: auto; }
+        }
+        
+        /* Standardize section spacing - reduce excessive padding to match review section */
+        .quick-intro { padding: 3rem 2rem !important; }
+        .about-section { padding: 3rem 2rem !important; }
+        .menu-section { padding: 3rem 2rem !important; }
+        .flavours-section { padding: 3rem 2rem !important; }
+        .gallery-section { padding: 3rem 2rem !important; }
+        .review-section { padding: 3rem 2rem !important; }
+        .faq-section { padding: 3rem 2rem !important; }
+        .contact-section { padding: 3rem 2rem !important; }
+        .map-section { padding: 3rem 2rem !important; }
     </style>
     <div class="mobile-social-icons">
          <a href="https://wa.me/642108326153?text=I'm%20interested%20in%20your%20cakes" target="_blank">
@@ -428,43 +543,92 @@ document.addEventListener('DOMContentLoaded', function() {
              <i class="fab fa-instagram"></i>
          </a>
     </div>
-    <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
-    <p class="intro-text">Freshly baked eggless & vegan cakes, cupcakes, and pastries – handcrafted with love to make your celebrations truly unforgettable. 🎂💕
-       
-        We specialise in eggless cakes in Wellington that bring joy to every celebration – birthdays, weddings, anniversaries, or just a sweet surprise for your loved ones!
 
-            Our promise:
-            ✅ 100% Eggless & Premium Ingredients
-            ✅ Custom Themes & Creative Designs 🎨
-            ✅ Vegan & Fusion Options Available 🥥🌱
-            ✅ Freshly Baked for Every Order
-
-        Every bite is a blend of flavour, love, and happiness – because your celebrations deserve the very best.
-    </p>
-            <div class="highlights">
-                <div class="highlight-item">
-                    <i class="fas fa-egg-slash"></i>
-                    <h4>100% Eggless</h4>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-palette"></i>
-                    <h4>Custom Designs</h4>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-heart"></i>
-                    <h4>Homemade & Hygienic</h4>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-leaf"></i>
-                    <h4>Vegan option available</h4>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-egg-slash"></i>
-                    <h4>Gluten-free option available</h4>
-                </div>
-            </div>
+    <div class="hero-split">
+      <div class="hero-text">
+        <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
+        <p class="intro-text">Looking for delicious <strong>eggless cakes in Wellington</strong>? At WellyDesiBites, we bake fresh eggless and vegan cakes, cupcakes, and pastries—crafted with care for birthdays, weddings, anniversaries, and every celebration.</p>
+        <p class="intro-text">We're a home bakery known for soft, flavourful bakes, custom themes, and friendly service. Tell us your idea—we'll design a cake that looks stunning and tastes even better.</p>
+        <ul class="intro-text" style="max-width: 800px; margin: 0 auto 2rem 0; list-style: none; padding-left: 0;">
+            <li>✅ 100% eggless with premium, fresh ingredients</li>
+            <li>✅ Custom designs and themed cakes for all occasions</li>
+            <li>✅ Vegan and fusion flavours available</li>
+            <li>✅ Gluten-free options available</li>
+            <li>✅ Freshly baked to order for the best taste</li>
+        </ul>
+        <p class="intro-text">Every bite blends <strong>flavour, love, and happiness</strong>—because your celebration deserves the very best. If you need a beautifully made, eggless cake in Wellington, you're in the right place.</p>
+      </div>
+      <div class="hero-collage" aria-label="Featured cake designs">
+        <div class="collage-wrapper">
+          <img id="collageSlide" src="images/BirthdayCakes/20241122_194732.avif" alt="Featured eggless cake from WellyDesiBites" loading="eager">
+          <button type="button" class="collage-btn collage-prev" aria-label="Previous">&#10094;</button>
+          <button type="button" class="collage-btn collage-next" aria-label="Next">&#10095;</button>
+          <div class="collage-dots" id="collageDots"></div>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <script>
+      // Lightweight collage slider; load FULL lists from three categories
+      const collageImages = [
+        'images/EgglessCake-1.jpg',
+        'images/EgglessCake-2.jpg',
+        'images/EgglessCake-3.jpg',
+        'images/EgglessCake-4.jpg',
+        // To add a new collage image in the future, add its path here, e.g.:
+        // 'images/EgglessCake-4.jpg',
+      ];
+      (function(){
+        const mediaEl = document.getElementById('collageSlide'); // this is an <img>
+        const prevBtn = document.querySelector('.collage-prev');
+        const nextBtn = document.querySelector('.collage-next');
+        const dotsContainer = document.getElementById('collageDots');
+        let idx = 0, timer;
+
+        function renderDots(){
+          if (!dotsContainer) return;
+          dotsContainer.innerHTML = '';
+          collageImages.forEach((_, i) => {
+            const d = document.createElement('span');
+            d.className = 'collage-dot' + (i === idx ? ' active' : '');
+            d.addEventListener('click', () => { show(i); restartAuto(); });
+            dotsContainer.appendChild(d);
+          });
+        }
+
+        function show(i){
+          if (collageImages.length === 0) return;
+          idx = (i + collageImages.length) % collageImages.length;
+          const src = collageImages[idx];
+          mediaEl.style.opacity = '0.2';
+          setTimeout(() => {
+            mediaEl.src = src;
+            mediaEl.alt = 'Featured eggless cake - ' + src.split('/').pop().replace(/_/g,' ').replace(/\.[^.]+$/, '');
+            mediaEl.style.opacity = '1';
+            renderDots();
+          }, 150);
+        }
+
+        function restartAuto(){
+          clearInterval(timer);
+          timer = setInterval(() => show(idx + 1), 5000);
+        }
+
+        prevBtn.addEventListener('click', () => { show(idx - 1); restartAuto(); });
+        nextBtn.addEventListener('click', () => { show(idx + 1); restartAuto(); });
+
+        // init
+        renderDots();
+        show(0);
+        restartAuto();
+
+        document.addEventListener('visibilitychange', ()=>{
+          if (document.hidden){ clearInterval(timer); }
+          else { restartAuto(); }
+        });
+      })();
+       </script>
+</section>
 
 	<!-- Update About Section -->
 	<section id="about" class="about-section">
@@ -582,12 +746,46 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="flavours" class="flavours-section">
     <div class="section-container">
         <h3 class="section-title">Flavours</h3>
-        <div class="flavours-image">
-            <img src="images/Menu/menu-4.jpg" alt="Flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto;" width="800" height="450" loading="lazy">
+        <div class="flavours-image" style="text-align:center;">
+            <img src="images/Menu/menu-4.jpg" alt="Wellington eggless cake flavours" style="display: block; margin-left: auto; margin-right: auto; width: 50%; height: auto; max-width: 800px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer;" width="800" height="450" loading="lazy" onclick="openFlavourModal()">
         </div>
     </div>
-</section>
-
+    <!-- Modal for Flavours Image -->
+    <style>
+      /* Ensure flavours modal shows full image especially on mobile */
+      #flavourImageModal { z-index: 2000; }
+      #flavourImageModal .modal-content {
+        max-width: 95vw !important;
+        max-height: 95vh !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+      @media (max-width: 768px) {
+        #flavourImageModal .modal-content { max-width: 98vw !important; max-height: 88vh !important; }
+        #flavourImageModal .close { top: 12px !important; right: 16px !important; font-size: 34px !important; }
+      }
+    </style>
+    <div id="flavourImageModal" class="modal">
+      <span class="close" onclick="closeFlavourModal()">&times;</span>
+      <img class="modal-content" id="flavourModalImg" alt="Wellington eggless cake flavours">
+    </div>
+    <script>
+      function openFlavourModal() {
+        document.getElementById('flavourImageModal').style.display = 'block';
+        document.getElementById('flavourModalImg').src = 'images/Menu/menu-4.jpg';
+      }
+      function closeFlavourModal() {
+        document.getElementById('flavourImageModal').style.display = 'none';
+      }
+      // Close modal when clicking outside image
+      window.addEventListener('click', function(event) {
+        var modal = document.getElementById('flavourImageModal');
+        if (event.target === modal) {
+          closeFlavourModal();
+        }
+      });
+    </script>
 
       <!-- Updated Gallery Section -->
     <section id="gallery" class="gallery-section">
