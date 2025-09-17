@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+          <script async src=https://www.googletagmanager.com/gtag/js?id=G-DN25PJC0Y1></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-DN25PJC0Y1'); </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eggless Anniversary Cakes Wellington | WellyDesiBites</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <meta name="description" content="Celebrate your special day with our delicious eggless anniversary cakes in Wellington, NZ.  WellyDesiBites offers elegant designs and flavors to make your anniversary memorable.">
+
+    
+
+    <section class="category-page">
+        <a href="index.html#gallery" class="back-button">< Back to Our Creations</a>
+        <div class="section-container">
+            <h2>Kids Special Birthday Theme Cakes</h2>
+            <div class="image-grid" id="anniversaryCakeGrid">
+                <!-- Add all Anniversary cake images -->
+                <!-- Add more images -->
+            </div>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img loading="lazy" class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="prev" onclick="previousImage()">Previous</button>
+            <button class="next" onclick="nextImage()">Next</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h5>Contact Details</h5>
+                <p>WellyDesiBites</p>
+                <p>Johnsonville, Wellington - 6037</p>
+                <p>New Zealand</p>
+                <p>Phone: 02108326153</p>
+            </div>
+            <div class="footer-column">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5>Follow Us</h5>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/wellydesibites" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/wellydesibitesnz" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 WellyDesiBites. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        let imageFiles = [
+"20250729_122438 14.03.28.webp",
+"20250729_103200.webp",
+"20250516_135359.webp",
+"20250801_094131(1).webp",
+"20250606_142702.webp",
+"20250807_081010 14.03.28.webp",
+"20250906_130359.webp",
+"20241020_125601.webp",
+
+"20250915_073305.webp",
+"20241112_010644.webp",
+"20250914_151624.webp",
+"20240818_025327.webp",
+"20250807_074821 14.03.28.webp",
+"IMG-20241019-WA0021.webp",
+"20250729_103200 14.03.28.webp",
+"20250822_133840.webp",
+"20250813_125834.webp",
+"20250915_093935.webp",
+
+
+    
+         
+        ]; // filenames from list_files result
+        let currentImageIndex = 0;
+
+        // Modal functions
+        function openModal(index) {
+            currentImageIndex = index;
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('modalImage').src = 'images/kidsSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/kidsSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+            document.getElementById('modalImage').src = 'images/kidsSpecialCakes/' + imageFiles[currentImageIndex];
+        }
+
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('imageModal')) {
+                closeModal();
+            }
+        }
+
+        // Dynamically load images
+        window.onload = function() {
+            const imageGrid = document.getElementById('anniversaryCakeGrid');
+
+            imageFiles.forEach((filename, index) => {
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+                imageItem.onclick = function() { openModal(index); }; // Pass index to openModal
+
+                const img = document.createElement('img');
+                img.src = 'images/kidsSpecialCakes/' + filename;
+                img.alt = `Eggless Kids special Birthday Theme Cake ${index + 1} - Wellington`; // descriptive alt text
+                img.loading = 'lazy';
+
+                imageItem.appendChild(img);
+                imageGrid.appendChild(imageItem);
+            });
+        };
+    </script>
+</body>
+</html>
