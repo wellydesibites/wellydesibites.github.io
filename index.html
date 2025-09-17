@@ -523,8 +523,21 @@ document.addEventListener('DOMContentLoaded', function() {
         .hero-text .section-title,
         .hero-text .intro-text { text-align: left; }
         .hero-text .section-title { margin-bottom: 1rem; }
-        .hero-text .intro-text { max-width: 720px; }
+        .hero-text .intro-text { max-width: 720px; font-family: var(--font-body); font-size: 1.1rem; line-height: 1.75; }
         .hero-text ul.intro-text { margin-top: 0.5rem; }
+        /* Force identical typography to About section */
+        .hero-text, .hero-text p, .hero-text li {
+            font-family: var(--font-body) !important;
+            font-weight: 400;
+            letter-spacing: normal;
+        }
+        .hero-text ul.intro-text li {
+            margin: 0.5rem 0;
+            padding-left: 0; /* keep emoji ticks aligned */
+            line-height: 1.7;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+        }
         .hero-collage .collage-wrapper {
             position: relative;
             width: 100%;
@@ -568,10 +581,12 @@ document.addEventListener('DOMContentLoaded', function() {
         @media (max-width: 900px) {
             .hero-split { grid-template-columns: 1fr; }
             .hero-collage { margin-top: 1rem; }
-            .hero-collage .collage-wrapper { height: 360px; }
+            .hero-collage .collage-wrapper { height: 320px; }
+            /* Ensure left alignment and proper indentation on mobile */
+            .hero-text { padding: 0 14px; }
             .hero-text .section-title,
-            .hero-text .intro-text { text-align: center; margin-left: auto; margin-right: auto; }
-            .hero-text ul.intro-text { margin-left: auto; margin-right: auto; }
+            .hero-text .intro-text { text-align: left; margin-left: 0; margin-right: 0; }
+            .hero-text ul.intro-text { margin-left: 0; margin-right: 0; padding-left: 0; }
         }
         
         /* Standardize section spacing - reduce excessive padding to match review section */
@@ -599,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="hero-split">
       <div class="hero-text">
-        <h3 class="section-title">Fresh Baked Cakes in Wellington, NZ</h3>
+        <h3 class="section-title">Fresh Baked Eggless Cakes in Wellington, NZ</h3>
         <p class="intro-text">Looking for delicious <strong>eggless cakes in Wellington</strong>? At WellyDesiBites, we bake fresh eggless and vegan cakes, cupcakes, and pastries—crafted with care for birthdays, weddings, anniversaries, and every celebration.</p>
         <p class="intro-text">We're a home bakery known for soft, flavourful bakes, custom themes, and friendly service. Tell us your idea—we'll design a cake that looks stunning and tastes even better.</p>
         <ul class="intro-text" style="max-width: 800px; margin: 0 auto 2rem 0; list-style: none; padding-left: 0;">
@@ -873,34 +888,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img loading="lazy" src="images/BirthdayCakes/20241122_194732.avif" alt="Custom Eggless Birthday Cakes Wellington" width="250" height="167">
                     <h4>Custom Birthday Cakes</h4>
                 </a>
+
+                <a href="kids-favourite-cakes.html" class="category-card">
+                    <img loading="lazy" src="images/kidsSpecialCakes/20250606_142702.webp" alt="Custom Eggless kids special Cakes Wellington" width="250" height="167">
+                    <h4>Kids Special Birthday Theme Cakes</h4>
+                </a>
                 
                 <a href="anniversary-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/AnniversaryCakes/20241015_234134.avif" alt="Elegant Eggless Anniversary Cakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/AnniversaryCakes/20241005_184353.webp" alt="Elegant Eggless Anniversary Cakes Wellington" width="250" height="167">
                     <h4>Elegant Anniversary Cakes</h4>
                 </a>
                 
-                <a href="FreshFruitsCakes.html" class="category-card">
-                    <img loading="lazy" src="images/FreshFruitsCakes/20241120_184931.avif" alt="Fresh Fruits Eggless Cakes Wellington" width="250" height="167">
-                    <h4>Fresh Fruits Cakes</h4>
-                </a>
-
                 <a href="IndianSweetSpecialCakes.html" class="category-card">
-                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20240618_113830.avif" alt="Indian Sweet Special Eggless Cakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/IndianSweetSpecialCakes/20250326_164404.webp" alt="Indian Sweet Special Eggless Cakes Wellington" width="250" height="167">
                     <h4>Indian Sweet Special Cakes</h4>
                 </a>
 
-                <a href="BabyShower-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/BabyShowerCakes/IMG-20250413-WA0006.jpg" alt="Eggless Baby Shower Cakes Wellington" width="250" height="167">
-                    <h4>Baby Shower Cakes</h4>
+                <a href="FreshFruitsCakes.html" class="category-card">
+                    <img loading="lazy" src="images/FreshFruitsCakes/20241120_184931.webp" alt="Fresh Fruits Eggless Cakes Wellington" width="250" height="167">
+                    <h4>Fresh Fruits Cakes</h4>
                 </a>
+
                 
                 <a href="FestiveSpecial-cakes.html" class="category-card">
-                    <img loading="lazy" src="images/FestiveSpecial/FestivalSpecial-2.avif" alt="Festival Special Eggless Cakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/FestiveSpecial/20250513_181512.webp" alt="Festival Special Eggless Cakes Wellington" width="250" height="167">
                     <h4>Festival Special Cakes</h4>
                 </a>            
     
                 <a href="NumberCakes.html" class="category-card">
-                    <img loading="lazy" src="images/NumberCakes/20240925_114326.avif" alt="Eggless Number Cakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/NumberCakes/20250907_124548.webp    " alt="Eggless Number Cakes Wellington" width="250" height="167">
                     <h4>Number Cakes</h4>
                 </a>
 
@@ -910,12 +926,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
 
                 <a href="ImageBasedCakes.html" class="category-card">
-                    <img loading="lazy" src="images/ImageBasedCakes/20240524_132346.avif" alt="Image Based Eggless Cakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/ImageBasedCakes/20240524_133215.webp" alt="Image Based Eggless Cakes Wellington" width="250" height="167">
                     <h4>Image Based Cakes</h4>
                 </a>
 
                 <a href="Cupcakes.html" class="category-card">
-                    <img loading="lazy" src="images/Cupcakes/cupcakes-1.avif" alt="Eggless Cupcakes Wellington" width="250" height="167">
+                    <img loading="lazy" src="images/Cupcakes/20241013_092918.webp" alt="Eggless Cupcakes Wellington" width="250" height="167">
                     <h4>Cup Cakes</h4>
                 </a>
 
